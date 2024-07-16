@@ -32,7 +32,8 @@ integration_tests:
       project: "{{ env_var('BIGQUERY_PROJECT') }}"
       dataset: "{{ env_var('BIGQUERY_SCHEMA') }}"
       threads: 10
-      keyfile_json: "{{ env_var('DBT_ENV_SECRET_BIGQUERY_KEYFILE_JSON') | as_native }}"
+      keyfile_json:
+        "{{ env_var('DBT_ENV_SECRET_BIGQUERY_KEYFILE_JSON') | as_native }}"
 
     snowflake:
       type: snowflake
