@@ -37,8 +37,8 @@ integration_tests:
       keyfile_json:
         type: "service_account"
         project_id: "emily-testing-354619"
-        private_key_id: {{ env_var('DBT_ENV_SECRET_BIGQUERY_KEY_ID') }}
-        private_key: {{ env_var('DBT_ENV_SECRET_BIGQUERY_PRIVATE_KEY') }}
+        private_key_id: "{{ env_var('DBT_ENV_SECRET_BIGQUERY_KEY_ID') }}"
+        private_key: "{{ env_var('DBT_ENV_SECRET_BIGQUERY_PRIVATE_KEY') }}"
         client_email: "grants@emily-testing-354619.iam.gserviceaccount.com"
         client_id: "123"
         auth_uri: "https://accounts.google.com/o/oauth2/auth"
