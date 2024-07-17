@@ -140,3 +140,5 @@ jobs:
                   BIGQUERY_PROJECT: ${{ vars.BIGQUERY_PROJECT }}
                   DBT_ENV_SECRET_BIGQUERY_KEYFILE_JSON: ${{ secrets.BIGQUERY_SERVICE_ACCOUNT_JSON }}
                   BIGQUERY_SCHEMA: "dbt_utils_integration_tests_bigquery_${{ github.run_number }}"
+                  DBT_ENV_SECRET_BIGQUERY_KEY_ID: ${{ secrets.DBT_ENV_SECRET_BIGQUERY_KEY_ID }}
+                  DBT_ENV_SECRET_BIGQUERY_PRIVATE_KEY: ${{ secrets.DBT_ENV_SECRET_BIGQUERY_PRIVATE_KEY }}

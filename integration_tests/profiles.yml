@@ -32,8 +32,19 @@ integration_tests:
       project: "{{ env_var('BIGQUERY_PROJECT') }}"
       dataset: "{{ env_var('BIGQUERY_SCHEMA') }}"
       threads: 10
+      # keyfile_json:
+      #   "{{ env_var('DBT_ENV_SECRET_BIGQUERY_KEYFILE_JSON') | as_native }}"
       keyfile_json:
-        "{{ env_var('DBT_ENV_SECRET_BIGQUERY_KEYFILE_JSON') | as_native }}"
+        type: "service_account"
+        project_id: "emily-testing-354619"
+        private_key_id: {{ env_var('DBT_ENV_SECRET_BIGQUERY_KEY_ID') }}
+        private_key: {{ env_var('DBT_ENV_SECRET_BIGQUERY_PRIVATE_KEY') }}
+        client_email: "grants@emily-testing-354619.iam.gserviceaccount.com"
+        client_id: "123"
+        auth_uri: "https://accounts.google.com/o/oauth2/auth"
+        token_uri: "https://oauth2.googleapis.com/token"
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+        client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/dbt-integration-test-user%40dbt-test-env.iam.gserviceaccount.com" 
 
     snowflake:
       type: "snowflake"
